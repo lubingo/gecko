@@ -1,0 +1,30 @@
+
+server:
+  port: 7561
+spring:
+  application:
+    name: gecko
+  datasource:
+    dynamic:
+      primary: master
+      strict: false
+      datasource:
+        master:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url:  jdbc:mysql://10.1.121.54:3306/b2b_distribution?useUnicode=true&characterEncoding=UTF-8&tinyInt1isBit=false&useSSL=false&serverTimezone=GMT%2b8
+          username:  dba
+          password:  fF9pB6pP8nL5bT
+      druid:
+        max-active:  200
+        min-idle:  50
+        max-wait:  60000
+        initial-size:  50
+        min-evictable-idle-time-millis:  300000
+        max-evictable-idle-time-millis:  600000
+
+
+
+logging:
+  level:
+    org:
+      springframework: DEBUG
