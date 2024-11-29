@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+/logs/gecko/2024-11-28/debug-log.0.log
+/logs/gecko/debug-log.log
+/logs/gecko/error-log.log
+/logs/gecko/2024-11-28/info-log.0.log
+/logs/gecko/info-log.log
+/logs/gecko/warn-log.log
