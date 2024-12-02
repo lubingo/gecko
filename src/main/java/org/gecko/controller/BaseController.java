@@ -4,6 +4,7 @@ package org.gecko.controller;
 import java.util.concurrent.DelayQueue;
 import lombok.extern.slf4j.Slf4j;
 import org.gecko.component.order.OrderDelayed;
+import org.gecko.component.order.queue.OrderDelayQueue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BaseController {
 
-    DelayQueue<OrderDelayed> delayQueue = new DelayQueue<>();
+    ThreadLocal threadLocal =new ThreadLocal();
+
+    DelayQueue<OrderDelayed> delayQueue = new OrderDelayQueue<>();
 
     @RequestMapping(value = "/setDelayQueue")
     public String setDelayQueue(){
